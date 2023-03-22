@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>AT - ARRAY</title>
+</head>
+<body>
+
+    <aside class="titulo">
+        <p>ATIVIDADE - ARRAY</p>
+    </aside>
+
+    <hr class="linha">
+
+    <section class="container">
+        <input class="button1" id="teste" type="text" placeholder="Digite um objeto:">
+
+        <main class="main">
+            <button id="adicionar">Adicionar</button>
+            <button id="ordenar">Ordenar</button>
+        </main>
+
+    </section>
+
+
+    <script>
+      var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+
+      function adicionarObjeto() {
+        var input = document.getElementById("teste");
+        var valor = input.value.trim();
+        input.value = '';
+       
+        if (valor === '') {
+          alert("Informe um valor válido");
+          return 0;
+        }
+       
+        if (objetos.includes(valor)) {
+          alert("O Objeto já está adicionado.");
+          return 0;
+        }
+       
+        objetos.push(valor);
+        console.log(objetos);
+      }
+
+      function ordenarObjetos() {
+        objetos.sort();
+        console.log(objetos);
+      }
+     
+      document.getElementById("adicionar").addEventListener("click", adicionarObjeto);
+      document.getElementById("ordenar").addEventListener("click", ordenarObjetos);
+    </script>
+
+</body>
+</html>
